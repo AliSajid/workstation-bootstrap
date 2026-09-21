@@ -1,0 +1,22 @@
+# Personal macOS workstation configuration.
+# Keep this intentionally small while the workstation is reconstructed.
+
+min_version = "2026.9.12"
+
+[bootstrap.mise_shell_activate]
+zprofile = "shims"
+zshrc = "activate"
+
+[bootstrap.packages]
+"brew:git" = "latest"
+"brew:gh" = "latest"
+"brew:neovim" = "latest"
+"brew:ripgrep" = "latest"
+"brew:fd" = "latest"
+"brew:jq" = "latest"
+
+[tools]
+
+[tasks.verify]
+description = "Verify the workstation baseline after bootstrap"
+run = "command -v git && command -v gh && command -v nvim && command -v rg && command -v fd && command -v jq && git --version && gh --version && nvim --version | head -n 1 && rg --version | head -n 1 && fd --version && jq --version"

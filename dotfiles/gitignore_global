@@ -1,0 +1,60 @@
+# Global Git ignore
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# R
+.Rhistory
+.Rapp.history
+.RData
+.RDataTmp
+.Ruserdata
+.Rproj.user/
+*.Rcheck/
+vignettes/*.html
+vignettes/*.pdf
+*_cache/
+.httr-oauth
+rsconnect/
+
+# Python / virtual environments
+.venv/
+venv/
+ENV/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+
+# Archives / packages
+*.7z
+*.a
+*.ar
+*.bz2
+*.cpio
+*.deb
+*.gz
+*.gzip
+*.iso
+*.jar
+*.lzma
+*.rar
+*.rpm
+*.tar
+*.tgz
+*.xz
+*.zip
+
+# Project-specific local state
+ltex.*
+.quarto
+.jj/
+.omo/

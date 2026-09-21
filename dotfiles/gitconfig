@@ -1,0 +1,127 @@
+[core]
+	autocrlf = input
+	excludesfile = ~/.gitignore_global
+	editor = nvim
+	pager = delta
+
+[user]
+	name = Ali Sajid Imami
+	email = 395482+AliSajid@users.noreply.github.com
+	signingKey = 0xFD077F7EDA94A381
+
+[commit]
+	gpgsign = true
+	verbose = true
+
+[tag]
+	gpgsign = true
+	forceSignAnnotated = true
+	sort = taggerdate
+
+[alias]
+	hist = log --pretty=format:\"%C(auto)%h %ad | %s%d %C(red)[%an]%C(reset) | GPG Sig: %C(auto,yellow)%GK (%G?)\" --graph --date=short
+	type = cat-file -t
+	dump = cat-file -p
+
+[log]
+	decorate = full
+
+[init]
+	defaultBranch = main
+
+[pull]
+	rebase = true
+
+[gpg]
+	program = gpg
+
+[http]
+	postBuffer = 524288000
+
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+
+[push]
+	default = simple
+	autoSetupRemote = true
+	followTags = true
+
+[advice]
+	addIgnoredFile = false
+
+[pack]
+	window = 1
+
+[credential "https://github.com"]
+	helper = !gh auth git-credential
+
+[credential "https://gist.github.com"]
+	helper = !gh auth git-credential
+
+[rebase]
+	autoStash = true
+	autoSquash = true
+	updateRefs = true
+	missingCommitsCheck = error
+
+[rerere]
+	enabled = true
+
+[column]
+	ui = auto
+
+[status]
+	showStash = true
+
+[blame]
+	coloring = highlightRecent
+	blankBoundary = true
+
+[branch]
+	sort = -committerdate
+
+[fetch]
+	fsckobjects = true
+	prune = true
+	pruneTags = true
+	parallel = 0
+
+[transfer]
+	fsckobjects = true
+
+[receive]
+	fsckobjects = true
+
+[merge]
+	conflictStyle = zdiff3
+	tool = meld
+
+[help]
+	autocorrect = 3
+
+[diff]
+	algorithm = histogram
+	colorMoved = default
+	colorMovedWS = allow-indentation-change
+
+[mergetool]
+	prompt = false
+
+[mergetool "meld"]
+	trustExitCode = true
+	cmd = open -W -a Meld --args --auto-merge "$LOCAL" "$BASE" "$REMOTE" --output="$MERGED"
+
+[hook "hk-pre-commit"]
+	command = test "${HK:-1}" = "0" || mise x hk -- hk run pre-commit --from-hook "$@"
+	event = pre-commit
+
+[hook "hk-commit-msg"]
+	command = test "${HK:-1}" = "0" || mise x hk -- hk run commit-msg --from-hook "$@"
+	event = commit-msg
+
+[hook "hk-post-commit"]
+	command = test "${HK:-1}" = "0" || mise x hk -- hk run post-commit --from-hook "$@"
+	event = post-commit
