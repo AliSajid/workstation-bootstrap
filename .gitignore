@@ -1,0 +1,218 @@
+# Local-only migration inventory from the previous workstation.
+# Keep it available to local tools (including OpenCode), but never commit it.
+/migration_data/
+
+# macOS filesystem noise
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100/
+.Trashes/
+.fseventsd/
+.DocumentRevisions-V100/
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Editor and IDE state
+.idea/
+.vscode/
+*.swp
+*.swo
+*.swn
+*~
+.nvchad/
+# Keep intentional Neovim configuration; ignore only generated local state.
+.nvimlog
+.nvimlog.*
+.session
+.sessions/
+
+# Shell history, local environment, and machine-specific overrides
+.zsh_history
+.zsh_sessions/
+.bash_history
+.python_history
+.lesshst
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+.direnv/
+mise.local.toml
+.mise.local.toml
+*.local
+
+# Credentials, private keys, tokens, and local authentication state
+# Do not store credentials in this repository, even if they are encrypted locally.
+**/credentials.json
+**/credentials.yaml
+**/credentials.yml
+**/*credential*
+**/*credentials*
+**/*secret*
+**/*secrets*
+**/*token*
+**/*tokens*
+**/*private_key*
+**/*service-account*.json
+**/application_default_credentials.json
+**/.netrc
+**/.authinfo
+**/known_hosts
+**/id_rsa
+**/id_ed25519
+**/id_ecdsa
+**/*.pem
+**/*.p12
+**/*.pfx
+**/*.key
+**/*.mobileprovision
+**/*.provisionprofile
+**/gh/hosts.yml
+**/gcloud/application_default_credentials.json
+**/containers/auth.json
+**/.config/gcloud/
+**/.config/gh/hosts.yml
+**/.ssh/
+
+# Local signing material and password-manager exports
+private/
+secrets/
+credentials/
+auth/
+*.kdbx
+*.keychain
+*.keychain-db
+*.asc
+*.gpg
+*.pgp
+
+# Logs, caches, temporary files, and runtime state
+*.log
+*.log.*
+*.tmp
+*.temp
+*.bak
+*.orig
+*.rej
+*.cache
+.cache/
+tmp/
+temp/
+logs/
+cache/
+**/Cache/
+**/Caches/
+**/Code Cache/
+**/GPUCache/
+**/Service Worker/CacheStorage/
+**/Crash Reports/
+**/GPUCache/
+**/IndexedDB/
+**/Local Storage/
+**/Session Storage/
+**/Singleton*
+**/lockfile
+*.pid
+*.sock
+
+# Databases, indexes, and local application state
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+*.realm
+*.index
+*.idx
+*.dump
+*.core
+core
+*.prof
+*.profraw
+
+# Language/tool build artifacts
+# Rust
+/target/
+**/target/
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.venv/
+venv/
+ENV/
+# R
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+# Node / Bun
+node_modules/
+.pnpm-store/
+.npm/
+.yarn/cache/
+.yarn/unplugged/
+.yarn/build-state.yml
+bun.lockb
+# Go
+/vendor/
+# Java / Kotlin
+.gradle/
+build/
+out/
+# Swift / Xcode
+.build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+# LaTeX
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+
+# Package-manager and tool downloads/state
+.tool-versions.local
+mise-cache/
+.mise-cache/
+.terraform/
+.terragrunt-cache/
+.ansible/
+.kube/cache/
+.kube/http-cache/
+.k9s/clusters/
+.k9s/screen-dumps/
+.k9s/aliases.yaml.local
+
+# Container and cloud CLI state
+.docker/
+**/docker-credential-*
+.aws/
+.azure/
+**/configstore/
+**/firebase-debug.log
+**/debug.log
+
+# OpenCode / agent local state: keep tracked project instructions and config,
+# ignore only likely runtime artifacts and local session data.
+.opencode/sessions/
+.opencode/logs/
+.opencode/cache/
+.opencode/tmp/
+.opencode/*.sqlite*
