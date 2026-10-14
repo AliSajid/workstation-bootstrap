@@ -97,7 +97,6 @@
 
 [merge]
 	conflictStyle = zdiff3
-	tool = meld
 
 [help]
 	autocorrect = 3
@@ -109,10 +108,6 @@
 
 [mergetool]
 	prompt = false
-
-[mergetool "meld"]
-	trustExitCode = true
-	cmd = open -W -a Meld --args --auto-merge "$LOCAL" "$BASE" "$REMOTE" --output="$MERGED"
 
 [hook "hk-pre-commit"]
 	command = test "${HK:-1}" = "0" || mise x hk -- hk run pre-commit --from-hook "$@"

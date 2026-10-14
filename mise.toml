@@ -14,9 +14,13 @@ zshrc = "activate"
 "brew:ripgrep" = "latest"
 "brew:fd" = "latest"
 "brew:jq" = "latest"
+"brew:delta" = "latest"
+"brew:git-lfs" = "latest"
+"brew:gnupg" = "latest"
 
 [tools]
+hk = "latest"
 
 [tasks.verify]
 description = "Verify the workstation baseline after bootstrap"
-run = "command -v git && command -v gh && command -v nvim && command -v rg && command -v fd && command -v jq && git --version && gh --version && nvim --version | head -n 1 && rg --version | head -n 1 && fd --version && jq --version"
+run = "command -v git && command -v gh && command -v nvim && command -v rg && command -v fd && command -v jq && command -v delta && command -v git-lfs && command -v gpg && command -v hk && git --version && gh --version && nvim --version | head -n 1 && rg --version | head -n 1 && fd --version && jq --version && delta --version && git-lfs version && gpg --version | head -n 1 && hk --version"
