@@ -5,7 +5,13 @@ min_version = "2026.9.12"
 
 [bootstrap.mise_shell_activate]
 zprofile = "shims"
-zshrc = "activate"
+
+[bootstrap.repos]
+"~/.zinit" = { url = "https://github.com/zdharma-continuum/zinit", ref = "main" }
+
+[dotfiles]
+"~/.zshenv" = { source = "dotfiles/.zshenv", mode = "symlink" }
+"~/.zshrc" = { source = "dotfiles/.zshrc", mode = "symlink" }
 
 [bootstrap.packages]
 "brew:git" = "latest"
