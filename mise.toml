@@ -20,7 +20,7 @@ zprofile = "shims"
 "brew:ripgrep" = "latest"
 "brew:fd" = "latest"
 "brew:jq" = "latest"
-"brew:delta" = "latest"
+"brew:git-delta" = "latest"
 "brew:git-lfs" = "latest"
 "brew:gnupg" = "latest"
 
